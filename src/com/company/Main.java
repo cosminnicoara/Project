@@ -166,7 +166,16 @@ class Atm {
     public class Main {
 
         public static void main(String[] args) {
+            Atm atm = new Atm("ING");
+            User user = new User("Cosmin");
+            Account account = new Account();
+            Card card = new Card(user,account,2134);
 
+            try {
+                atm.insertCard(card);
+            }catch (CardBlockedException e){
+                System.out.println(e.getMessage());
+            }
 
     }
 }
